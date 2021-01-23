@@ -17,8 +17,7 @@ kind: Config
 build:
   artifacts:
   - image: transactionhistory
-    buildpacks:
-      builder: "gcr.io/buildpacks/builder:v1"
+    jib: {}
 deploy:
   kubectl:
     manifests:
