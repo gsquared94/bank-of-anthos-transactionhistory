@@ -14,6 +14,8 @@
 
 apiVersion: skaffold/v2beta11
 kind: Config
+metadata:
+  name: transactionhistory
 build:
   artifacts:
   - image: transactionhistory
@@ -22,3 +24,7 @@ deploy:
   kubectl:
     manifests:
     - ./transaction-history.yaml
+profiles:
+- name: cloudbuild
+  build:
+    googleCloudBuild: {}
